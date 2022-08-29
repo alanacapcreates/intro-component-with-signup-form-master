@@ -31,10 +31,10 @@ Users should be able to:
 ### Screenshot
 
 #### Desktop
-![Screenshot - Desktop](./images/solution-screenshot-desktop.png.jpg)
+![Screenshot - Desktop](./images/solution-screenshot-desktop.png)
 
 #### Mobile
-![Screenshot - Mobile](./images/solution-screenshot-mobile.png.jpg)
+![Screenshot - Mobile](./images/solution-screenshot-mobile.png)
 
 
 ### Links

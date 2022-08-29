@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://kit.fontawesome.com/acc3c14e55.js" crossorigin="anonymous"></script>
+
+
   <title>Frontend Mentor | Intro component with sign up form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,27 +21,100 @@
 </head>
 <body>
 
-  Learn to code by watching others
-
-  See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-  but understanding how developers think is invaluable. 
-
-  Try it free 7 days then $20/mo. thereafter
-
-  First Name 
-  Last Name 
-  Email Address
-  Password
-
-  Claim your free trial 
-
-  By clicking the button, you are agreeing to our Terms and Services
+  <main class="container">
+    <!-- First section - H1 / P -->
+    <div class="first">
+      <h1>Learn to code by watching others</h1>
+    
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable.
+      </p> 
+    </div>
   
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
+    <!-- Second section - Form -->
+    <div>
+      <p class="cta"><span class="bold ">Try it free 7 days</span> then $20/mo. thereafter</p>
+      <div class="form-container">
+        <form>
+
+
+          <input id="fName" required type="text" placeholder="First Name"/>
+          <span id="invalidFName" class="invalid-txt">First Name cannot be empty</span>
+
+
+          <input id="lName" required type="text" placeholder="Last Name"/> 
+          <span  id="invalidLName"class="invalid-txt">Last Name cannot be empty</span>
+
+
+          <input id="email" type="email" placeholder="Email Address"/>
+          <span id="invalidEmail" class="invalid-txt">Looks like this is not an email</span>
+
+
+          <input id="password" required type="password" placeholder="Password"/>
+          <span  id="invalidPassword"class="invalid-txt">Password cannot be empty</span>
+        
+
+
+          <button type="submit" onclick="validationCheck()">Claim your free trial</button>
+        </form>
+
+        <p class="secondary">
+          By clicking the button, you are agreeing to our <span class="bold accent">Terms and Services</span>
+        </p>
+      </div>
+    
+      <footer>
+        <p class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a target="_blank" href="https://alanacapcreates.com">AlanaCapCreates</a>.
+        </p>
+      </footer>
+    </div>
+  </main>
+
+
+
+  <script>
+    const firstName = document.getElementById('fName')
+    const invalidFName = document.getElementById('invalidFName')
+
+    const lastName = document.getElementById('lName')
+    const invalidLName = document.getElementById('invalidLName')
+
+    const email = document.getElementById('email')
+    const invalidEmail = document.getElementById('invalidEmail')
+
+    const password = document.getElementById('password')
+    const invalidPassword = document.getElementById('invalidPassword')
+
+
+    const inputs = document.querySelectorAll('input')
+
+    
+    function validationCheck(){
+      
+      inputs.forEach(input => {
+        if(!input.value){
+          input.classList.add('invalid')
+        }
+
+      })
+
+      !firstName.value ? invalidFName.style.display='block' : invalidFName.style.display='none';
+
+
+      !lastName.value ? invalidLName.style.display='block' : invalidLName.style.display='none';
+
+
+      !email.value ? invalidEmail.style.display='block' : invalidEmail.style.display='none';
+
+
+      !password.value ? invalidPassword.style.display='block' : invalidPassword.style.display='none';
+     
+    }
+
+  </script>
+
+
 </body>
 </html>
